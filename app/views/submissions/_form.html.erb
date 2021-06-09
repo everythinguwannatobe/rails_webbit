@@ -26,6 +26,16 @@
     <%= form.text_field :url %>
   </div>
 
+  <div class="field">
+    <%= form.label :submission_image %>
+    <%= form.file_field :submission_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :submission_video %>
+    <%= form.file_field :submission_video %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

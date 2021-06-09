@@ -13,7 +13,11 @@ gem "bootsnap", ">= 1.4.4", require: false
 # ===== App specific gems ===============================
 gem "faker"
 gem "devise", "~> 4.8"
-
+gem "carrierwave", "~> 2.2", ">= 2.2.2"
+gem "mini_magick", "~> 4.11"
+gem "valid_url", "~> 0.0.4"
+gem "inline_svg", "~> 1.7", ">= 1.7.2"
+gem "strong_migrations"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

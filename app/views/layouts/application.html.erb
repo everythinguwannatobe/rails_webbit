@@ -5,9 +5,18 @@
     <%= render "shared/head" %>
   </head>
 
-  <body>
+  <body class="m-4">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <nav>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Submissions", submissions_path %></li>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <li><%= link_to "Log in", new_user_session_path %></li>
+        <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>

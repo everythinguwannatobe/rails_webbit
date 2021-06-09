@@ -1,27 +1,23 @@
 class SubmissionsController < ApplicationController
-  before_action :set_submission, only: %i[ show edit update destroy ]
+  before_action :set_submission, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
 
-  # GET /submissions or /submissions.json
   def index
     @submissions = Submission.all
   end
 
-  # GET /submissions/1 or /submissions/1.json
   def show
   end
 
-  # GET /submissions/new
   def new
-    @submission = Submission.new
+    @submission = current_user.submissions.build
   end
 
-  # GET /submissions/1/edit
   def edit
   end
 
-  # POST /submissions or /submissions.json
   def create
-    @submission = Submission.new(submission_params)
+    @submission = current_user.submissions.build(submission_params)
 
     respond_to do |format|
       if @submission.save
@@ -34,7 +30,6 @@ class SubmissionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /submissions/1 or /submissions/1.json
   def update
     respond_to do |format|
       if @submission.update(submission_params)
@@ -47,7 +42,6 @@ class SubmissionsController < ApplicationController
     end
   end
 
-  # DELETE /submissions/1 or /submissions/1.json
   def destroy
     @submission.destroy
     respond_to do |format|
@@ -57,13 +51,12 @@ class SubmissionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_submission
-      @submission = Submission.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def submission_params
-      params.require(:submission).permit(:title, :body, :url)
-    end
+  def set_submission
+    @submission = Submission.find(params[:id])
+  end
+
+  def submission_params
+    params.require(:submission).permit(:title, :body, :url, :submission_image, :submission_video)
+  end
 end
