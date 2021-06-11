@@ -17,11 +17,11 @@ gem "carrierwave", "~> 2.2", ">= 2.2.2"
 gem "mini_magick", "~> 4.11"
 gem "valid_url", "~> 0.0.4"
 gem "inline_svg", "~> 1.7", ">= 1.7.2"
-gem "strong_migrations"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   # ===== App specific gems ============================
+  gem "strong_migrations"
   gem "standard", require: false
   gem "sqlite3", "~> 1.4"
   gem "rspec-rails"
