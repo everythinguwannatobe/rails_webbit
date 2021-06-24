@@ -4,7 +4,7 @@
   "dependencies": {
     "@rails/actioncable": "^6.1.4",
     "@rails/activestorage": "^6.1.4",
-    "@rails/ujs": "^6.0.4",
+    "@rails/ujs": "^6.1.4",
     "@rails/webpacker": "5.4.0",
     "@tailwindcss/aspect-ratio": "^0.2.1",
     "@tailwindcss/forms": "^0.3.3",
